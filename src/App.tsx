@@ -28,10 +28,10 @@ function App() {
     useEffect(() => {
         const getLeftText = localStorage.getItem('left')
         const getRightText = localStorage.getItem('right')
-        if( getRightText ){
+        if (getRightText) {
             setRightText(JSON.parse(getRightText))
         }
-        if(getLeftText){
+        if (getLeftText) {
             setLeftText(JSON.parse(getLeftText))
         }
         return () => {
@@ -49,9 +49,12 @@ function App() {
                 <textarea className={'page-inner'} data-right={'right'} value={rightText} onChange={onChangeText}>{rightText}</textarea>
             </div>
         </div>
-        <button onClick={onSave}>Save</button>
-        <button onClick={removeText}>Delete</button>
+        <div className="buttons">
+            <button onClick={onSave}>Save</button>
+            <button onClick={removeText}>Delete</button>
+        </div>
     </div>
+
 }
 
 export default App;

@@ -1,54 +1,61 @@
-body {background: rgb(225, 228, 232)}
+body {
+    background: rgb(225, 228, 232)
+}
 
 /** Notebook Base **/
 .notebook {
     position: absolute;
-    width: 500px; height: 350px;
-    top: 50%; left: 50%;
+    width: 500px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
     margin: -175px 0 0 -250px;
 
     background-color: #444;
     background-size: 4px 4px;
 
     border-radius: 15px;
-    box-shadow:
-            inset 2px 2px 2px rgba(255,255,255,.2),
-            2px 2px 3px rgba(0,0,0,.2);
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .2),
+    2px 2px 3px rgba(0, 0, 0, .2);
 }
 
 /** Left Page **/
 .left {
     position: absolute;
-    left: 10px; right: 50%;
-    top: 10px; bottom: 10px;
+    left: 10px;
+    right: 50%;
+    top: 10px;
+    bottom: 10px;
 
     background: rgb(247, 246, 212);
 
     border-radius: 10px 0 0 10px;
-    box-shadow:
-            inset -10px 0 30px -10px rgba(0,0,0,.3),
-            -2px 2px 1px rgba(0,0,0,.8);
+    box-shadow: inset -10px 0 30px -10px rgba(0, 0, 0, .3),
+    -2px 2px 1px rgba(0, 0, 0, .8);
 }
 
 /** Right Page **/
 .right {
     position: absolute;
-    left: 50%; right: 10px;
-    top: 10px; bottom: 10px;
+    left: 50%;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
 
     background: rgb(247, 246, 212);
 
     border-radius: 0 10px 10px 0;
-    box-shadow:
-            inset 10px 0 30px -10px rgba(0,0,0,.3),
-            2px 2px 1px rgba(0,0,0,.8);
+    box-shadow: inset 10px 0 30px -10px rgba(0, 0, 0, .3),
+    2px 2px 1px rgba(0, 0, 0, .8);
 }
 
 /** Page inner **/
 .page-inner {
     position: absolute;
-    top: 30px; bottom: 20px;
-    left: 15px; right: 15px;
+    top: 30px;
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
     outline: none;
     overflow: hidden;
     width: 85%;
@@ -56,14 +63,13 @@ body {background: rgb(225, 228, 232)}
             to bottom,
             transparent,
             transparent 19px,
-            rgba(0,0,0,.2),
-            rgba(0,0,0,.2) 1px
+            rgba(0, 0, 0, .2),
+            rgba(0, 0, 0, .2) 1px
     );
     background-size: 100% 20px;
-    box-shadow:
-            0 -1px 0 rgba(0,0,0,0.2),
-            0 -5px 0 rgb(247, 246, 212),
-            0 -6px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2),
+    0 -5px 0 rgb(247, 246, 212),
+    0 -6px 0 rgba(0, 0, 0, 0.4);
 
     font: 15px/20px 'Courgette';
     color: #555;
@@ -71,4 +77,15 @@ body {background: rgb(225, 228, 232)}
     border: none;
     resize: none;
 }
-.page-inner > div {text-align: left !important}
+
+.page-inner > div {
+    text-align: left !important
+}
+
+.buttons{
+    margin-top: 200px;
+   text-align: center;
+}
+.buttons button{
+    margin: 0 10px;
+}
