@@ -6,28 +6,25 @@ function App() {
     const [rightText, setRightText] = useState<string>('')
 
     const onChangeText = (event: ChangeEvent<HTMLTextAreaElement>) => {
-        if (event.target.dataset.left){
-            console.log('left')
+        if (event.target.dataset.left) {
             setLeftText(event.target.value)
         }
-        if(event.target.dataset.right){
-            console.log('right')
+        if (event.target.dataset.right) {
             setRightText(event.target.value)
         }
     }
 
     const onSave = () => {
-        localStorage.setItem('left', leftText)
-        localStorage.setItem('right', rightText)
+        localStorage.setItem('left', JSON.stringify(leftText))
+        localStorage.setItem('right', JSON.stringify(rightText))
     }
 
     useEffect(() => {
-
         const getLeftText = localStorage.getItem('left')
         const getRightText = localStorage.getItem('right')
         if( getRightText && getLeftText){
-            setLeftText(getLeftText)
-            setRightText(getRightText)
+            setLeftText(JSON.parse(getLeftText))
+            setRightText(JSON.parse(getRightText))
         }
 
     }, [])
@@ -35,10 +32,10 @@ function App() {
     return <div>
         <div className="notebook">
             <div className="left">
-                <textarea className={'page-inner'} data-left={'left'} onChange={onChangeText}>{leftText}</textarea>
+                <textarea className={'page-inner'} data-left={'left'} value={leftText} onChange={onChangeText}>{leftText}</textarea>
             </div>
             <div className="right">
-                <textarea className={'page-inner'} data-right={'right'} onChange={onChangeText}>{rightText}</textarea>
+                <textarea className={'page-inner'} data-right={'right'} value={rightText} onChange={onChangeText}>{rightText}</textarea>
             </div>
         </div>
         <button onClick={onSave}>Save</button>
