@@ -19,6 +19,12 @@ function App() {
         localStorage.setItem('right', JSON.stringify(rightText))
     }
 
+    const removeText = () => {
+        setRightText('')
+        setLeftText('')
+        localStorage.clear()
+    }
+
     useEffect(() => {
         const getLeftText = localStorage.getItem('left')
         const getRightText = localStorage.getItem('right')
@@ -26,7 +32,10 @@ function App() {
             setLeftText(JSON.parse(getLeftText))
             setRightText(JSON.parse(getRightText))
         }
-
+        return () => {
+            localStorage.setItem('left', JSON.stringify(leftText))
+            localStorage.setItem('right', JSON.stringify(rightText))
+        }
     }, [])
 
     return <div>
@@ -39,6 +48,7 @@ function App() {
             </div>
         </div>
         <button onClick={onSave}>Save</button>
+        <button onClick={removeText}>Delete</button>
     </div>
 }
 
