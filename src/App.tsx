@@ -28,9 +28,11 @@ function App() {
     useEffect(() => {
         const getLeftText = localStorage.getItem('left')
         const getRightText = localStorage.getItem('right')
-        if( getRightText && getLeftText){
-            setLeftText(JSON.parse(getLeftText))
+        if( getRightText ){
             setRightText(JSON.parse(getRightText))
+        }
+        if(getLeftText){
+            setLeftText(JSON.parse(getLeftText))
         }
         return () => {
             localStorage.setItem('left', JSON.stringify(leftText))
