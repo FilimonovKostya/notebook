@@ -6,12 +6,11 @@ function App() {
     const [rightText, setRightText] = useState<string>('')
 
     const onChangeText = (event: ChangeEvent<HTMLTextAreaElement>) => {
-        debugger
-        if (event.target.getAttribute('left') === 'left'){
+        if (event.target.dataset.left){
             console.log('left')
             setLeftText(event.target.value)
         }
-        if(event.target.getAttribute('right') === 'right'){
+        if(event.target.dataset.right){
             console.log('right')
             setRightText(event.target.value)
         }
@@ -36,10 +35,10 @@ function App() {
     return <div>
         <div className="notebook">
             <div className="left">
-                <textarea className={'page-inner'} datatype={'left'} onChange={onChangeText}>{leftText}</textarea>
+                <textarea className={'page-inner'} data-left={'left'} onChange={onChangeText}>{leftText}</textarea>
             </div>
             <div className="right">
-                <textarea className={'page-inner'} datatype={'right'} onChange={onChangeText}>{rightText}</textarea>
+                <textarea className={'page-inner'} data-right={'right'} onChange={onChangeText}>{rightText}</textarea>
             </div>
         </div>
         <button onClick={onSave}>Save</button>
